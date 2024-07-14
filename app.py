@@ -7,6 +7,10 @@ CORS(app)
 
 client = Client("Be-Bo/llama-3-chatbot_70b")
 
+@app.route('/', methods=['GET'])
+def get_index():
+    return "Hello World"
+
 @app.route('/process', methods=['POST'])
 def process_prompt():
     data = request.json
